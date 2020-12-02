@@ -1,3 +1,8 @@
+<?php
+if(isset($_POST['pseudo'])) {
+    setcookie('pseudo', $_POST['pseudo'], time() + 365*24*3600, null, null, false, true);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,7 @@
 
 <form action="minichat_post.php" method="post">
 <p><label for="pseudo">Pseudo</label></p>
-<p><input type="text" name="pseudo"></p>
+<p><input type="text" name="pseudo" value="<?php echo $_COOKIE['pseudo'] ?>"></p>
 <p><label for="message">Votre message</label></p>
 <p><input type="text" id="name" name="message" minlength="4" maxlength="255"></p>
 <p><input type="submit" value="Poster"></p>

@@ -1,4 +1,5 @@
 <?php
+
 // Effectuer ici la requête qui insère le message
 try
 {
